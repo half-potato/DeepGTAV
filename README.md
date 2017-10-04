@@ -1,6 +1,6 @@
 # DeepGTAV v2
 
-### I've created an Slack channel for DeepGTAV users in order to build a community, solve issues and agilize communication. Join [here](https://join.slack.com/t/deepgtav/shared_invite/MjI4MTMzMDY3NzE3LTE1MDI5ODA1ODYtNzdhMTg1Y2JlYg)!
+Tutorial [here] (simplifyrobotics.wordpress.com/2017/10/04/recording-data-in-gta-v/)
 
 *A plugin for GTAV that transforms it into a vision-based self-driving car research environment.*
 
