@@ -119,8 +119,11 @@ void Scenario::parseDatasetConfig(const Value& dc, bool setDefaults) {
 	else if (setDefaults) drivingMode = _DRIVING_MODE_;
 	if (!dc["location"].IsNull()) location = dc["location"].GetBool();
 	else if (setDefaults) location = _LOCATION_;
+	if (!dc["heading"].IsNull()) heading = dc["heading"].GetBool();
+	else if (setDefaults) heading = _HEADING_;
 	if (!dc["time"].IsNull()) time = dc["time"].GetBool();
 	else if (setDefaults) time = _TIME_;
+
 
 	//Create JSON DOM
 	d.SetObject();
@@ -139,6 +142,7 @@ void Scenario::parseDatasetConfig(const Value& dc, bool setDefaults) {
 	if (yawRate) d.AddMember("yawRate", 0.0, allocator);
 	if (drivingMode) d.AddMember("drivingMode", 0, allocator);
 	if (location) d.AddMember("location", a, allocator);
+	if (heading) d.AddMember("heading", 0, allocator);
 	if (time) d.AddMember("time", 0, allocator);
 
 	screenCapturer = new ScreenCapturer(width, height);
@@ -304,6 +308,7 @@ StringBuffer Scenario::generateMessage() {
 	if (yawRate) setYawRate();
 	if (drivingMode); //TODO
 	if (location) setLocation();
+	if (heading) setHeading();
 	if (time) setTime();
 
 	d.Accept(writer);
@@ -604,6 +609,10 @@ void Scenario::setLocation(){
 	Value location(kArrayType);
 	location.PushBack(pos.x, allocator).PushBack(pos.y, allocator).PushBack(pos.z, allocator);
 	d["location"] = location;
+}
+
+void Scenario::setHeading() {
+	d["heading"] = ENTITY::GET_ENTITY_HEADING(vehicle);
 }
 
 void Scenario::setTime(){

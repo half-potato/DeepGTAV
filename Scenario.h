@@ -45,6 +45,7 @@ private:
 	bool yawRate;
 	bool drivingMode; //TODO
 	bool location;
+	bool heading;
 	bool time;
 
 	float currentThrottle = 0.0;
@@ -89,4 +90,5 @@ private:
 	void setDrivingMode();
 	void setLocation();
 	void setTime();
+	void setHeading();
 };

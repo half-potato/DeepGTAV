@@ -14,4 +14,5 @@
 #define _YAW_RATE_ false
 #define _DRIVING_MODE_ false
 #define _LOCATION_ false
+#define _HEADING_ false
 #define _TIME_ false
