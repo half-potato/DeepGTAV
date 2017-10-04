@@ -1,6 +1,6 @@
 # DeepGTAV v2
 
-Tutorial [here] (simplifyrobotics.wordpress.com/2017/10/04/recording-data-in-gta-v/)
+Tutorial [here](simplifyrobotics.wordpress.com/2017/10/04/recording-data-in-gta-v/)
 
 *A plugin for GTAV that transforms it into a vision-based self-driving car research environment.*
 
